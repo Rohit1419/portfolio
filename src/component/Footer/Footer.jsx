@@ -7,21 +7,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           {/* Logo and Copyright */}
           <div className="text-center md:text-left">
-<<<<<<< HEAD
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">
               r.
             </h3>
-=======
-            <a href="/">
-              <img
-                src="../src/assets/azure.png"
-                width="25px"
-                color="#60A5FA"
-                alt=""
-              />
-            </a>
-
->>>>>>> 0462ba4 (Resolved deployment related issue with vecel)
             <p className="text-slate-400 mt-2">
               © {new Date().getFullYear()} Design & Built by Rohit Gite. All
               rights reserved.
