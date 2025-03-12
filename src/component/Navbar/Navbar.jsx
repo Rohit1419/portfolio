@@ -36,7 +36,7 @@ const Navbar = () => {
           className="text-xl font-medium tracking-tight"
         >
           <a href="/">
-            <img src={Logo} width="25px" color="#60A5FA" alt="logo" />
+            <img src={Logo} width="27px" color="#60A5FA" alt="logo" />
           </a>
         </motion.div>
 
