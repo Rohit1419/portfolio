@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { FiUser, FiBriefcase, FiCode, FiMail } from "react-icons/fi";
+import Logo from "../../assets/azure.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -35,12 +36,7 @@ const Navbar = () => {
           className="text-xl font-medium tracking-tight"
         >
           <a href="/">
-            <img
-              src="../src/assets/azure.png"
-              width="25px"
-              color="#60A5FA"
-              alt=""
-            />
+            <img src={Logo} width="25px" color="#60A5FA" alt="logo" />
           </a>
         </motion.div>
 
