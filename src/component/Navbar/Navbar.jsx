@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { FiUser, FiBriefcase, FiCode, FiMail } from "react-icons/fi";
+import {
+  FiUser,
+  FiBriefcase,
+  FiCode,
+  FiMail,
+  FiMenu,
+  FiX,
+} from "react-icons/fi";
 import Logo from "../../assets/azure.png";
 
 const Navbar = () => {
@@ -21,6 +28,7 @@ const Navbar = () => {
     { name: "Projects", icon: FiCode },
     { name: "Contact", icon: FiMail },
   ];
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -45,7 +53,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <motion.a
               key={item.name}
-              href={`${"/"}#${item.name.toLowerCase()}`}
+              href={`/#${item.name.toLowerCase()}`}
               whileHover={{ y: -2 }}
               className="text-sm text-[#94A3B8] hover:text-[#F1F5F9] transition-all relative group flex items-center gap-2"
             >
@@ -62,24 +70,7 @@ const Navbar = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="md:hidden text-[#94A3B8] hover:text-[#F1F5F9]"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d={
-                mobileMenuOpen
-                  ? "M6 18L18 6M6 6l12 12"
-                  : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-              }
-            />
-          </svg>
+          {mobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </motion.button>
 
         {/* Mobile Menu */}
@@ -94,7 +85,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <a
                   key={item.name}
-                  href={`#${item.name.toLowerCase()}`}
+                  href={`/#${item.name.toLowerCase()}`}
                   className="block text-[#94A3B8] hover:text-[#F1F5F9] transition-all flex items-center gap-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
