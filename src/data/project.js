@@ -1,6 +1,7 @@
-import techmaven from "../assets/techmaven.png";
-import cheffclaude from "../assets/cheffclaude.png";
-import portfolio from "../assets/portfolio.png";
+import techmaven from "../assets/projectsAssets/techmaven.png";
+import cheffclaude from "../assets/projectsAssets/cheffclaude.png";
+import portfolio from "../assets/projectsAssets/portfolio.png";
+import feugo from "../assets/projectsAssets/feugo.png";
 
 export const projects = [
   {
@@ -30,6 +31,15 @@ export const projects = [
     tech: ["React", "Tailwind CSS", "Vite"],
     demo: "https://demo.com",
     github: "https://github.com/Rohit1419/portfolio",
+    featured: true,
+  },
+  {
+    title: "Feugo",
+    description: "A mordern UI for food pickup service with geolocation .",
+    image: feugo,
+    tech: ["React", "Tailwind CSS", "openCage Geocoder"],
+    demo: "https://feugo.vercel.app/",
+    github: "https://github.com/Rohit1419/Feugo",
     featured: true,
   },
 ];

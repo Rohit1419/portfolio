@@ -1,4 +1,5 @@
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { BiCoffeeTogo } from "react-icons/bi";
 
 const Footer = () => {
   return (
@@ -67,6 +68,12 @@ const Footer = () => {
               className="p-2 text-slate-400 hover:text-blue-400 transition-colors"
             >
               <FiMail size={20} />
+            </a>
+            <a
+              href="https://buymeacoffee.com/rohitgite"
+              className="p-2 text-slate-400 hover:text-blue-400 transition-colors"
+            >
+              <BiCoffeeTogo size={20} />
             </a>
           </div>
         </div>

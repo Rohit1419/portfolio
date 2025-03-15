@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { FiGithub, FiDownload, FiLinkedin, FiArrowDown } from "react-icons/fi";
+import { BiCoffeeTogo } from "react-icons/bi";
 
 const Hero = () => {
   return (
@@ -62,13 +63,10 @@ const Hero = () => {
             </button>
           </a>
 
-          <a
-            href="https://github.com/Rohit1419?tab=repositories"
-            rel="noopner noreferrer"
-          >
+          <a href="https://buymeacoffee.com/rohitgite" rel="noopner noreferrer">
             <button className="px-8 py-4 border border-slate-700 text-slate-200 rounded-lg hover:border-blue-400 transition-colors flex items-center gap-2 group">
-              <FiGithub className="group-hover:rotate-12 transition-transform" />
-              Projects
+              <BiCoffeeTogo className="group-hover:rotate-12 w-4.5 transition-transform" />
+              Buy me a coffee
             </button>
           </a>
         </motion.div>
