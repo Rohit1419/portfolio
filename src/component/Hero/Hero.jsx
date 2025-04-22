@@ -4,12 +4,12 @@ import { BiCoffeeTogo } from "react-icons/bi";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[calc(100vh-80px)] w-full   bg-[#0F172A] flex items-center justify-center">
+    <div className="relative min-h-[calc(100vh-80px)] w-full bg-[#0F172A] flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center space-y-8 max-w-4xl px-8"
+        className="text-center space-y-8 max-w-4xl px-8 flex flex-col items-center"
       >
         <div className="space-y-4">
           <motion.h1
@@ -95,20 +95,20 @@ const Hero = () => {
             <FiLinkedin size={24} />
           </a>
         </motion.div>
-      </motion.div>
 
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 1.2,
-          duration: 0.8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-      >
-        <FiArrowDown className="text-blue-400 text-3xl animate-bounce" />
+        <motion.div
+          className="mt-12 mb-8"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 1.2,
+            duration: 0.8,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        >
+          <FiArrowDown className="text-blue-400 text-3xl animate-bounce" />
+        </motion.div>
       </motion.div>
     </div>
   );
