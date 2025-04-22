@@ -2,6 +2,7 @@ import techmaven from "../assets/projectsAssets/techmaven.png";
 import cheffclaude from "../assets/projectsAssets/cheffclaude.png";
 import portfolio from "../assets/projectsAssets/portfolio.png";
 import feugo from "../assets/projectsAssets/feugo.png";
+import budgetwise from "../assets/projectsAssets/budgetwise.png";
 
 export const projects = [
   {
@@ -40,6 +41,16 @@ export const projects = [
     tech: ["React", "Tailwind CSS", "openCage Geocoder"],
     demo: "https://feugo.vercel.app/",
     github: "https://github.com/Rohit1419/Feugo",
+    featured: true,
+  },
+  {
+    title: "BudgetWise",
+    description:
+      "A personal finance visualizer web app with transaction tracking, budgeting, and interactive charts.",
+    image: budgetwise,
+    tech: ["React", "Node.js", "Express", "MongoDB", "Recharts", "Shadcn"],
+    demo: "https://budgetwisefrontend.vercel.app/",
+    github: "https://github.com/Rohit1419/BudgetWise",
     featured: true,
   },
 ];

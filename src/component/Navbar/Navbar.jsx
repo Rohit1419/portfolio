@@ -37,7 +37,7 @@ const Navbar = () => {
         scrolled ? "py-4 bg-[#0F172A]/95" : "py-6 bg-transparent"
       } backdrop-blur-sm`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl  px-6 flex items-center justify-between">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}

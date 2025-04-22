@@ -13,7 +13,7 @@ const Hero = () => {
       >
         <div className="space-y-4">
           <motion.h1
-            className="text-7xl md:text-8xl font-bold tracking-tight"
+            className="text-7xl md:text-8xl mt-20 font-bold tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -47,7 +47,7 @@ const Hero = () => {
         </motion.p>
 
         <motion.div
-          className="flex gap-6 justify-center"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
@@ -56,16 +56,21 @@ const Hero = () => {
             href="https://resume-eta-ashen.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
+            className="w-full sm:w-auto"
           >
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-400 to-emerald-400 rounded-lg text-slate-900 font-semibold hover:opacity-90 transition-all flex items-center gap-2 group cursor-pointer ">
+            <button className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-400 to-emerald-400 rounded-lg text-slate-900 font-semibold hover:opacity-90 transition-all flex items-center justify-center gap-2 group cursor-pointer">
               <FiDownload className="group-hover:translate-y-1 transition-transform" />
               Resume
             </button>
           </a>
 
-          <a href="https://buymeacoffee.com/rohitgite" rel="noopner noreferrer">
-            <button className="px-8 py-4 border border-slate-700 text-slate-200 rounded-lg hover:border-blue-400 transition-colors flex items-center gap-2 group">
-              <BiCoffeeTogo className="group-hover:rotate-12 w-4.5 transition-transform" />
+          <a
+            href="https://buymeacoffee.com/rohitgite"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto"
+          >
+            <button className="w-full px-6 sm:px-8 py-3 sm:py-4 border border-slate-700 text-slate-200 rounded-lg hover:border-blue-400 transition-colors flex items-center justify-center gap-2 group">
+              <BiCoffeeTogo className="group-hover:rotate-12 transition-transform" />
               Buy me a coffee
             </button>
           </a>
