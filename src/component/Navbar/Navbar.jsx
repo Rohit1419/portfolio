@@ -33,11 +33,11 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50   transition-all duration-300 ${
         scrolled ? "py-4 bg-[#0F172A]/95" : "py-6 bg-transparent"
       } backdrop-blur-sm`}
     >
-      <div className="max-w-7xl  px-6 flex items-center justify-between">
+      <div className="max-w-full  px-6 flex items-center justify-between">
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -86,7 +86,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={`/#${item.name.toLowerCase()}`}
-                  className="block text-[#94A3B8] hover:text-[#F1F5F9] transition-all flex items-center gap-2"
+                  className=" text-[#94A3B8] hover:text-[#F1F5F9] transition-all flex items-center gap-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <item.icon size={16} />
