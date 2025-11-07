@@ -32,5 +32,10 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
     "vite": "^6.2.0"
-  }
+  },
+  "description": "A sleek and interactive portfolio website built with React, Three.js, and Tailwind CSS.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
