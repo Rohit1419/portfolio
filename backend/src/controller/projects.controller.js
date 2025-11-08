@@ -1,6 +1,5 @@
-import fs from "fs";
+import { Project } from "../db/models/project.model.js";
 import uploadOnClaudinary from "../cloudinarry.js";
-import path from "path";
 
 const createProject = async (req, res) => {
   // Implementation for creating a project
@@ -26,14 +25,47 @@ const createProject = async (req, res) => {
     return res.status(500).json({ error: "Cover image upload failed." });
   }
 
-  const newProject = project.push({
+  const newProject = await new Project.create({
     title,
     description,
-    coverImage: coverImage.url,
     tech,
     demo,
     github,
+    coverImage: coverImage.url,
   });
 
-  return res.status(201).json({ message: "Project created successfully." });
+  return res
+    .status(201)
+    .json({ data: newProject, message: "Project created successfully." });
 };
+
+// get all projects
+
+const getAllProjects = async (req, res) => {
+  const projects = await Project.find().sort({ createdAt: -1 });
+
+  if (!projects) {
+    return res.status(404).json({ error: "No projects found." });
+  }
+
+  return res
+    .status(200)
+    .json({ data: projects, message: "Projects fetched successfully." });
+};
+
+// delete the project by id
+
+const deleteProject = async (req, res) => {
+  const { id } = req.params;
+  const deletedProject = await Project.findByIdAndDelete(id);
+
+  if (!deletedProject) {
+    return res.status(404).json({ error: "Project not found." });
+  }
+
+  return res
+    .status(200)
+    .json({ data: deletedProject, message: "Project deleted successfully." });
+};
+
+export { createProject, getAllProjects, deleteProject };
