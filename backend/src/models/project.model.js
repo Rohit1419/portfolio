@@ -28,6 +28,15 @@ const projectSchema = new Schema(
       required: true,
       trim: true,
     },
+    githubUrl: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    featured: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

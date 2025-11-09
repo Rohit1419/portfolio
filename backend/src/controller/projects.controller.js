@@ -1,37 +1,52 @@
-import { Project } from "../db/models/project.model.js";
-import uploadOnClaudinary from "../cloudinarry.js";
+import { Project } from "../models/project.model.js";
+import uploadOnCloudinary from "../cloudinarry.js";
 
 const createProject = async (req, res) => {
-  // Implementation for creating a project
-  const { title, description, tech, demo, github } = req.body;
+  const { title, description, tech, demoUrl, githubUrl, featured } = req.body;
 
-  if (
-    [title, description, tech, demo, github].some(
-      (field) => !field || field?.trim() == ""
-    )
-  ) {
-    return res.status(400).json({ error: "All fields are required." });
+  const requiredFields = [
+    "title",
+    "description",
+    "tech",
+    "demoUrl",
+    "githubUrl",
+    "featured",
+  ];
+
+  const missing = requiredFields.filter(
+    (field) => !req.body[field] || String(req.body[field]).trim() === ""
+  );
+
+  if (missing.length > 0) {
+    return res
+      .status(400)
+      .json({ error: `Missing required fields: ${missing.join(", ")}` });
   }
 
-  const coverImageLocalPath = req.files["coverImage"][0].path;
+  const coverImageLocalPath = req.file?.path;
 
   if (!coverImageLocalPath) {
     return res.status(400).json({ error: "Cover image is required." });
   }
 
-  const coverImage = await uploadOnClaudinary(coverImageLocalPath);
+  const uploadedImage = await uploadOnCloudinary(coverImageLocalPath);
 
-  if (!coverImage) {
+  if (!uploadedImage) {
     return res.status(500).json({ error: "Cover image upload failed." });
   }
 
-  const newProject = await new Project.create({
+  const techArray = Array.isArray(tech)
+    ? tech
+    : tech.split(",").map((t) => t.trim());
+
+  const newProject = await Project.create({
     title,
     description,
-    tech,
-    demo,
-    github,
-    coverImage: coverImage.url,
+    tech: techArray,
+    demoUrl,
+    githubUrl,
+    coverImage: uploadedImage.secure_url,
+    featured,
   });
 
   return res
@@ -44,7 +59,7 @@ const createProject = async (req, res) => {
 const getAllProjects = async (req, res) => {
   const projects = await Project.find().sort({ createdAt: -1 });
 
-  if (!projects) {
+  if (projects.length === 0) {
     return res.status(404).json({ error: "No projects found." });
   }
 

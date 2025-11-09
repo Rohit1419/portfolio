@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
 import connectDB from "./db/db.js";
 import app from "./app.js";
-
+import { v2 as cloudinary } from "cloudinary";
 dotenv.config({ path: "./.env" });
+
 connectDB()
   .then(() => {
     app.on("error", (error) => {

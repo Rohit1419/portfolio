@@ -23,12 +23,8 @@ const experienceSchema = new Schema(
       trim: true,
       maxLenghth: 500,
     },
-    tech: {
-      type: [String],
-      required: true,
-      trim: true,
-    },
-    compneyWebsite: {
+
+    companyWebsite: {
       type: String,
       required: true,
       trim: true,

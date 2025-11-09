@@ -11,6 +11,7 @@ app.use(express.static("public"));
 
 const BASE_URL = process.env.BASE_URL || "/api/v1";
 
+// Importing all routes
 import allRoutes from "./routes/all.route.js";
 app.use(BASE_URL, allRoutes);
 
